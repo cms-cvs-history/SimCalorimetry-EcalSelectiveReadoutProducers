@@ -1,0 +1,12 @@
+module ecalSelectiveReadout = EcalSelectiveReadoutProducer {
+  string digiProducer = "ecaldigi"
+  string trigPrimProducer = "tp"
+  double srpLowTowerThreshold = 2.5
+  double srpHighTowerThreshold = 5.0
+  int32 deltaEta = 2
+  int32 deltaPhi = 2
+  double srpBarrelLowInterest = 0.09
+  double srpEndcapLowInterest = 0.45
+
+}
+

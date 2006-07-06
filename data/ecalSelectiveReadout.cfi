@@ -1,5 +1,9 @@
 module ecalSelectiveReadout = EcalSelectiveReadoutProducer {
   string digiProducer = "ecaldigi"
+  string EBdigiCollection = ""
+  string EEdigiCollection = ""
+  string EBSRPdigiCollection = "ebDigis"
+  string EESRPdigiCollection = "eeDigis"
   string trigPrimProducer = "tp"
   double srpLowTowerThreshold = 2.5
   double srpHighTowerThreshold = 5.0

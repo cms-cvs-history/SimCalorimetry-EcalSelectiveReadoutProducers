@@ -9,14 +9,20 @@ module ecalSelectiveReadout = EcalSelectiveReadoutProducer {
   double srpHighTowerThreshold = 5.0
   int32 deltaEta = 2
   int32 deltaPhi = 2
-  int32 ecalDccZs1stSample = 1
+  int32 ecalDccZs1stSample = 0
   double eeDccAdcToGeV = 0.035
   double ebDccAdcToGeV = 0.060
-  vdouble dccNormalizedWeights = { -0.33333, -0.33333, -0.333333, 0., 1. }
+  vdouble dccNormalizedWeights = { -0.33333, -0.33333, -0.333333, 0., 0., 1. }
   double srpLowTowerThreshold = 2.5
   double srpHighTowerThreshold = 5.
   double srpBarrelLowInterestChannelZS = 0.09
   double srpEndcapLowInterestChannelZS = 0.45
   double srpBarrelHighInterestChannelZS = -1.e9
   double srpEndcapHighInterestChannelZS = -1.e9
+  #switch to run w/o trigger primitive. For debug use only
+  bool trigPrimBypass = false
+  #for debug mode only:
+  double trigPrimBypassLTH = 2.5
+  #for debug mode only:
+  double trigPrimBypassHTH = 5.
 }

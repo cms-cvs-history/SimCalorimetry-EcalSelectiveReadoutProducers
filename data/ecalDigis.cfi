@@ -1,36 +1,80 @@
 module ecalDigis = EcalSelectiveReadoutProducer {
+  # Label of input EB and EE digi collections
   string digiProducer = "ecalUnsuppressedDigis"
+
+  # Instance name of input EB digi collections
   string EBdigiCollection = ""
+
+  # Instance name of input EB digi collections
   string EEdigiCollection = ""
+
+  # Instance name of output EB SR flags collection
   string EBSrFlagCollection = "ebSrFlags"
+
+  # Instance name of output EE SR flags collection
   string EESrFlagCollection = "eeSrFlags"
+
+  # Instance name of output EB digis collection
   string EBSRPdigiCollection = "ebDigis"
+
+  # Instance name of output EE digis collection
   string EESRPdigiCollection = "eeDigis"
+
+  # Label name of input ECAL trigger primitive collection
   string trigPrimProducer = "ecalTriggerPrimitiveDigis"
+
+  # Instance name of ECAL trigger primitive collection
+  string trigPrimCollection = ""
+
+  # Lower trigger tower Et threshold of Selective readout algorithm
   double srpLowTowerThreshold = 2.5
+
+  # Higher trigger tower Et threshold of Selective readout algorithm
   double srpHighTowerThreshold = 5.0
+
+  # Neighbour eta range, neighborhood: (2*deltaEta+1)*(2*deltaPhi+1)
   int32 deltaEta = 2
+
+  # Neighbouring eta range, neighborhood: (2*deltaEta+1)*(2*deltaPhi+1)
   int32 deltaPhi = 2
+
+  # Index of time sample (staring from 1) the first DCC weights is implied
   int32 ecalDccZs1stSample = 1
+
+  # ADC to GeV conversion factor used in ZS filter for EB
   double ebDccAdcToGeV = 0.035
+
+  # ADC to GeV conversion factor used in ZS filter for EE
   double eeDccAdcToGeV = 0.060
+
   #DCC ZS FIR weights: -1/3,-1/3,-1/3,0,0,1 rounding in such way that in Hw
   #representation (weigth*1024 rounded to nearest integer) the sum is null:
   vdouble dccNormalizedWeights = { -0.334, -0.333, -0.333, 0., 0., 1. }
-#  double srpLowTowerThreshold = 2.5
-#  double srpHighTowerThreshold = 5.
+
+  # ZS energy threshold in GeV to apply to low interest channels of barrel
   double srpBarrelLowInterestChannelZS = 0.09
+
+  # ZS energy threshold in GeV to apply to low interest channels of endcap
   double srpEndcapLowInterestChannelZS = 0.45
+
+  # ZS energy threshold in GeV to apply to high interest channels of barrel
   double srpBarrelHighInterestChannelZS = -1.e9
+
+  # ZS energy threshold in GeV to apply to high interest channels of endcap
   double srpEndcapHighInterestChannelZS = -1.e9
+
   #switch to run w/o trigger primitive. For debug use only
   bool trigPrimBypass = true
+
   #for debug mode only:
   double trigPrimBypassLTH = 2.5
+
   #for debug mode only:
   double trigPrimBypassHTH = 5.
+
   #for debug mode only
   bool trigPrimBypassWithPeakFinder = true
+
   #number of events whose TT and SR flags must be dumped (for debug purpose):
   untracked int32 dumpFlags = 0
 }

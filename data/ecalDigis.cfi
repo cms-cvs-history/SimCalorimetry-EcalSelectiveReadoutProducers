@@ -77,4 +77,7 @@ module ecalDigis = EcalSelectiveReadoutProducer {
 
   #number of events whose TT and SR flags must be dumped (for debug purpose):
   untracked int32 dumpFlags = 0
+
+  #logical flag to write out SrFlags
+  untracked bool writeSrFlags = false
 }

@@ -79,5 +79,5 @@ module ecalDigis = EcalSelectiveReadoutProducer {
   untracked int32 dumpFlags = 0
 
   #logical flag to write out SrFlags
-  untracked bool writeSrFlags = false
+  untracked bool writeSrFlags = true
 }

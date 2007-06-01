@@ -47,9 +47,9 @@ module ecalDigis = EcalSelectiveReadoutProducer {
   # ADC to GeV conversion factor used in ZS filter for EE
   double eeDccAdcToGeV = 0.060
 
-  #DCC ZS FIR weights: -1/3,-1/3,-1/3,0,0,1 rounding in such way that in Hw
+  #DCC ZS FIR weights: weights are rounded in such way that in Hw
   #representation (weigth*1024 rounded to nearest integer) the sum is null:
-  vdouble dccNormalizedWeights = { -0.334, -0.333, -0.333, 0., 0., 1. }
+  vdouble dccNormalizedWeights = { -0.3738, -0.3738, -0.3632, 0.2719, 0.4678, 0.372 }
 
   # ZS energy threshold in GeV to apply to low interest channels of barrel
   double srpBarrelLowInterestChannelZS = 0.10

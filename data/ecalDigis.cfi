@@ -43,7 +43,7 @@ module ecalDigis = EcalSelectiveReadoutProducer {
 
   #DCC ZS FIR weights: weights are rounded in such way that in Hw
   #representation (weigth*1024 rounded to nearest integer) the sum is null:
-  vdouble dccNormalizedWeights = { -0.3738, -0.3738, -0.3632, 0.2719, 0.4678, 0.372 }
+  vdouble dccNormalizedWeights = { -0.3740, -0.3740, -0.3629, 0.2721, 0.4681, 0.3707 }
 
   # ZS energy threshold in GeV to apply to low interest channels of barrel
   double srpBarrelLowInterestChannelZS = 0.10

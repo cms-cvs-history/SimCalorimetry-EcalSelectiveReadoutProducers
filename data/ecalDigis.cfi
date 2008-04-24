@@ -1,6 +1,6 @@
-module ecalDigis = EcalSelectiveReadoutProducer {
+module simEcalDigis = EcalSelectiveReadoutProducer {
   # Label of input EB and EE digi collections
-  string digiProducer = "ecalUnsuppressedDigis"
+  string digiProducer = "simEcalUnsuppressedDigis"
 
   # Instance name of input EB digi collections
   string EBdigiCollection = ""
@@ -21,7 +21,7 @@ module ecalDigis = EcalSelectiveReadoutProducer {
   string EESRPdigiCollection = "eeDigis"
 
   # Label name of input ECAL trigger primitive collection
-  string trigPrimProducer = "ecalTriggerPrimitiveDigis"
+  string trigPrimProducer = "simEcalTriggerPrimitiveDigis"
 
   # Instance name of ECAL trigger primitive collection
   string trigPrimCollection = ""

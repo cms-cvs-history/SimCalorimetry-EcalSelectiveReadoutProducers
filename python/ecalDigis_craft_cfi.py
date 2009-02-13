@@ -35,7 +35,7 @@ simEcalDigis = cms.EDProducer("EcalSelectiveReadoutProducer",
     deltaPhi = cms.int32(1),
 
     # Index of time sample (staring from 1) the first DCC weights is implied
-    ecalDccZs1stSample = cms.int32(2),
+    ecalDccZs1stSample = cms.int32(3),
 
     # ADC to GeV conversion factor used in ZS filter for EB
     ebDccAdcToGeV = cms.double(0.035),
@@ -43,20 +43,20 @@ simEcalDigis = cms.EDProducer("EcalSelectiveReadoutProducer",
     # ADC to GeV conversion factor used in ZS filter for EE
     eeDccAdcToGeV = cms.double(0.06),
 
-    #DCC ZS FIR weights: weights are rounded in such way that in Hw
-    #representation (weigth*1024 rounded to nearest integer) the sum is null:
-    dccNormalizedWeights = cms.vdouble(-0.374, -0.374, -0.3629, 0.2721, 0.4681, 
-        0.3707),
+    #DCC ZS FIR weights.
+    #d-efault value set of DCC firmware used in CRUZET and CRAFT
+    dccNormalizedWeights = cms.vdouble(-1.1865, 0.0195, 0.2900, 0.3477, 0.3008,
+                                        0.2266),
 
     # Switch to use a symetric zero suppression (cut on absolute value). For
     # studies only, for time being it is not supported by the hardware.
     symetricZS = cms.bool(False),
 
     # ZS energy threshold in GeV to apply to low interest channels of barrel
-    srpBarrelLowInterestChannelZS = cms.double(0.1),
+    srpBarrelLowInterestChannelZS = cms.double(3*.035),
 
     # ZS energy threshold in GeV to apply to low interest channels of endcap
-    srpEndcapLowInterestChannelZS = cms.double(0.3),
+    srpEndcapLowInterestChannelZS = cms.double(3*0.06),
 
     # ZS energy threshold in GeV to apply to high interest channels of barrel
     srpBarrelHighInterestChannelZS = cms.double(-1.e9),
